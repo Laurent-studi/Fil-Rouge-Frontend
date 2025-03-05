@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Le Quai Antique</title>
+    <meta name="description" content="Panneau d'administration du restaurant Le Quai Antique">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Le Quai Antique</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Retour au site</a></li>
+                    <li><a href="#" id="logout-btn">Déconnexion</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-header">
+                <h2>Panneau d'administration</h2>
+                <p>Bienvenue dans l'interface d'administration du restaurant Le Quai Antique</p>
+            </div>
+
+            <!-- Menu de navigation admin -->
+            <div class="admin-nav">
+                <a href="#" class="admin-nav-item active" data-section="dashboard">Tableau de bord</a>
+                <a href="#" class="admin-nav-item" data-section="horaires">Horaires</a>
+                <a href="#" class="admin-nav-item" data-section="carte">Carte & Menus</a>
+                <a href="#" class="admin-nav-item" data-section="galerie">Galerie</a>
+                <a href="#" class="admin-nav-item" data-section="reservations">Réservations</a>
+            </div>
+
+            <!-- Contenu des sections -->
+            <div class="admin-content">
+                <!-- Tableau de bord -->
+                <section id="dashboard" class="admin-section active">
+                    <div class="admin-section-header">
+                        <h3>Tableau de bord</h3>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Réservations aujourd'hui</h4>
+                                <p class="stat-value" id="today-reservations">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Réservations cette semaine</h4>
+                                <p class="stat-value" id="week-reservations">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Capacité maximale</h4>
+                                <p class="stat-value" id="max-capacity">50 couverts</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <h4>Actions rapides</h4>
+                        <div class="action-buttons">
+                            <button class="btn-action" data-target="horaires">Modifier les horaires</button>
+                            <button class="btn-action" data-target="carte">Gérer la carte</button>
+                            <button class="btn-action" data-target="galerie">Ajouter des photos</button>
+                            <button class="btn-action" data-target="reservations">Voir les réservations</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Horaires -->
+                <section id="horaires" class="admin-section">
+                    <div class="admin-section-header">
+                        <h3>Gestion des horaires</h3>
+                    </div>
+                    <div class="admin-form-container">
+                        <form id="horaires-form" class="admin-form">
+                            <div class="form-group">
+                                <label for="max-couverts">Nombre maximum de couverts</label>
+                                <input type="number" id="max-couverts" name="max-couverts" min="1" max="100" value="50" required>
+                            </div>
+                            <div class="form-group">
+                                <h4>Horaires d'ouverture</h4>
+                                <p class="form-info">Le restaurant est ouvert du mardi au dimanche. Chaque service dure deux heures.</p>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="midi-debut">Déjeuner - Heure de début</label>
+                                    <input type="time" id="midi-debut" name="midi-debut" value="12:00" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="midi-fin">Déjeuner - Heure de fin</label>
+                                    <input type="time" id="midi-fin" name="midi-fin" value="14:00" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="soir-debut">Dîner - Heure de début</label>
+                                    <input type="time" id="soir-debut" name="soir-debut" value="19:00" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="soir-fin">Dîner - Heure de fin</label>
+                                    <input type="time" id="soir-fin" name="soir-fin" value="21:00" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary">Enregistrer les modifications</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Carte et Menus -->
+                <section id="carte" class="admin-section">
+                    <div class="admin-section-header">
+                        <h3>Gestion de la carte et des menus</h3>
+                    </div>
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" data-target="categories">Catégories</button>
+                        <button class="admin-tab" data-target="plats">Plats</button>
+                        <button class="admin-tab" data-target="menus">Menus</button>
+                    </div>
+                    
+                    <!-- Gestion des catégories -->
+                    <div id="categories" class="admin-tab-content active">
+                        <div class="admin-form-container">
+                            <form id="form-categorie" class="admin-form">
+                                <div class="form-group">
+                                    <label for="nom-categorie">Nom de la catégorie</label>
+                                    <input type="text" id="nom-categorie" name="nom-categorie" placeholder="Ex: Entrées, Plats, Desserts..." required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn-primary">Ajouter la catégorie</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="admin-list-container">
+                            <h4>Catégories existantes</h4>
+                            <ul id="liste-categories" class="admin-list">
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Gestion des plats -->
+                    <div id="plats" class="admin-tab-content">
+                        <div class="admin-form-container">
+                            <form id="form-plat" class="admin-form">
+                                <div class="form-group">
+                                    <label for="categorie-plat">Catégorie</label>
+                                    <select id="categorie-plat" name="categorie-plat" required>
+                                        <option value="">Sélectionnez une catégorie</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nom-plat">Titre du plat</label>
+                                    <input type="text" id="nom-plat" name="nom-plat" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="desc-plat">Description</label>
+                                    <textarea id="desc-plat" name="desc-plat" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prix-plat">Prix (€)</label>
+                                    <input type="number" id="prix-plat" name="prix-plat" min="0" step="0.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn-primary">Ajouter le plat</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="admin-list-container">
+                            <h4>Plats existants</h4>
+                            <ul id="liste-plats" class="admin-list">
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Gestion des menus -->
+                    <div id="menus" class="admin-tab-content">
+                        <div class="admin-form-container">
+                            <form id="form-menu" class="admin-form">
+                                <div class="form-group">
+                                    <label for="titre-menu">Titre du menu</label>
+                                    <input type="text" id="titre-menu" name="titre-menu" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="desc-menu">Description</label>
+                                    <textarea id="desc-menu" name="desc-menu" rows="2" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Plats inclus</label>
+                                    <div id="plats-menu-list" class="checkbox-list">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prix-menu">Prix (€)</label>
+                                    <input type="number" id="prix-menu" name="prix-menu" min="0" step="0.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn-primary">Ajouter le menu</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="admin-list-container">
+                            <h4>Menus existants</h4>
+                            <ul id="liste-menus" class="admin-list">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Galerie -->
+                <section id="galerie" class="admin-section">
+                    <div class="admin-section-header">
+                        <h3>Gestion de la galerie</h3>
+                    </div>
+                    <div class="admin-form-container">
+                        <form id="galerie-form" class="admin-form">
+                            <div class="form-group">
+                                <label for="image-title">Titre de l'image</label>
+                                <input type="text" id="image-title" name="image-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="image-file">Sélectionner une image</label>
+                                <input type="file" id="image-file" name="image-file" accept="image/*" required>
+                                <p class="form-help">Formats acceptés: JPG, PNG, WEBP. Taille maximale: 2 Mo</p>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary">Ajouter l'image</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="admin-gallery">
+                        <h4>Images de la galerie</h4>
+                        <div class="admin-gallery-grid">
+                            <div class="admin-gallery-item">
+                                <img src="img/placeholder-dish-1.jpg" alt="Plat signature du Chef">
+                                <div class="admin-gallery-overlay">
+                                    <h5>Plat signature du Chef</h5>
+                                    <div class="admin-gallery-actions">
+                                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-gallery-item">
+                                <img src="img/placeholder-dish-2.jpg" alt="Dessert aux fruits rouges">
+                                <div class="admin-gallery-overlay">
+                                    <h5>Dessert aux fruits rouges</h5>
+                                    <div class="admin-gallery-actions">
+                                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-gallery-item">
+                                <img src="img/placeholder-dish-3.jpg" alt="Entrée de saison">
+                                <div class="admin-gallery-overlay">
+                                    <h5>Entrée de saison</h5>
+                                    <div class="admin-gallery-actions">
+                                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-gallery-item">
+                                <img src="img/placeholder-dish-4.jpg" alt="Poisson du lac">
+                                <div class="admin-gallery-overlay">
+                                    <h5>Poisson du lac</h5>
+                                    <div class="admin-gallery-actions">
+                                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Réservations -->
+                <section id="reservations" class="admin-section">
+                    <div class="admin-section-header">
+                        <h3>Gestion des réservations</h3>
+                    </div>
+                    <div class="admin-filter-container">
+                        <div class="form-group">
+                            <label for="reservation-date">Filtrer par date</label>
+                            <input type="date" id="reservation-date" name="reservation-date">
+                        </div>
+                        <button id="reset-filter" class="btn-secondary">Réinitialiser</button>
+                    </div>
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Heure</th>
+                                    <th>Nom</th>
+                                    <th>Couverts</th>
+                                    <th>Allergies</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reservations-table-body">
+                                <tr>
+                                    <td>12/05/2023</td>
+                                    <td>12:30</td>
+                                    <td>Martin Dupont</td>
+                                    <td>4</td>
+                                    <td>Gluten, fruits à coque</td>
+                                    <td>
+                                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>12/05/2023</td>
+                                    <td>19:45</td>
+                                    <td>Sophie Durand</td>
+                                    <td>2</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title">Modifier</h3>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Confirmation</h3>
+            <p id="confirm-message">Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+            <div class="modal-actions">
+                <button id="confirm-cancel" class="btn-secondary">Annuler</button>
+                <button id="confirm-ok" class="btn-danger">Supprimer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2023 Le Quai Antique. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="assets/js/admin.js"></script>
+</body>
+</html> 

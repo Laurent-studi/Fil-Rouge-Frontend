@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Quai Antique - Restaurant Gastronomique à Chambéry</title>
+    <meta name="description" content="Le Quai Antique, restaurant gastronomique du Chef Arnaud Michant à Chambéry. Découvrez une cuisine authentique mettant en valeur les produits de la Savoie.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Le Quai Antique</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#menu">Notre Carte</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#reservation">Réservation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#connexion" class="btn-connexion">Connexion</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section d'accueil -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Une expérience gastronomique authentique</h2>
+                <p>Découvrez l'univers culinaire du Chef Arnaud Michant à travers une cuisine sans artifice mettant en valeur les produits de la Savoie.</p>
+                <a href="#reservation" class="btn-primary">Réserver une table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section à propos -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Restaurant</h2>
+                <p>Une promesse d'un voyage dans l'univers culinaire du Chef Arnaud Michant</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Le Quai Antique est le troisième restaurant du Chef Arnaud Michant, installé au cœur de Chambéry. Passionné par les produits et producteurs de la Savoie, le Chef vous propose une expérience gastronomique unique, à travers une cuisine authentique et raffinée.</p>
+                    <p>Que ce soit pour le déjeuner ou le dîner, laissez-vous transporter par des saveurs locales revisitées avec finesse et créativité.</p>
+                </div>
+                <div class="horaires">
+                    <h3>Nos Horaires</h3>
+                    <ul>
+                        <li><span>Mardi - Dimanche</span></li>
+                        <li>Déjeuner: 12h00 - 14h00</li>
+                        <li>Dîner: 19h00 - 21h00</li>
+                        <li><span>Lundi</span></li>
+                        <li>Fermé</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section menu -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Carte</h2>
+                <p>Des plats savoureux préparés avec des produits locaux de qualité</p>
+            </div>
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-target="plats">Plats à la Carte</button>
+                <button class="menu-tab" data-target="menus">Menus</button>
+            </div>
+            <div class="menu-content">
+                <div id="plats" class="menu-category active">
+                    <!-- Les plats seront chargés dynamiquement -->
+                    <div class="category">
+                        <h3>Entrées</h3>
+                        <div class="dishes">
+                            <div class="dish">
+                                <div class="dish-info">
+                                    <h4>Velouté de potimarron</h4>
+                                    <p>Velouté onctueux de potimarron de Savoie, crème fraîche et éclats de noisettes torréfiées</p>
+                                </div>
+                                <div class="dish-price">12€</div>
+                            </div>
+                            <div class="dish">
+                                <div class="dish-info">
+                                    <h4>Tartare de truite</h4>
+                                    <p>Tartare de truite du lac du Bourget aux herbes fraîches et zestes de citron</p>
+                                </div>
+                                <div class="dish-price">14€</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <h3>Plats</h3>
+                        <div class="dishes">
+                            <div class="dish">
+                                <div class="dish-info">
+                                    <h4>Suprême de volaille fermière</h4>
+                                    <p>Suprême de volaille fermière rôti, mousseline de céleri et jus réduit au thym</p>
+                                </div>
+                                <div class="dish-price">24€</div>
+                            </div>
+                            <div class="dish">
+                                <div class="dish-info">
+                                    <h4>Omble chevalier</h4>
+                                    <p>Filet d'omble chevalier, beurre blanc aux agrumes et légumes de saison</p>
+                                </div>
+                                <div class="dish-price">26€</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <h3>Desserts</h3>
+                        <div class="dishes">
+                            <div class="dish">
+                                <div class="dish-info">
+                                    <h4>Tarte aux myrtilles</h4>
+                                    <p>Tarte fine aux myrtilles sauvages et glace vanille</p>
+                                </div>
+                                <div class="dish-price">10€</div>
+                            </div>
+                            <div class="dish">
+                                <div class="dish-info">
+                                    <h4>Fondant au chocolat</h4>
+                                    <p>Fondant au chocolat noir, cœur coulant et crème anglaise</p>
+                                </div>
+                                <div class="dish-price">11€</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menus" class="menu-category">
+                    <!-- Les menus seront chargés dynamiquement -->
+                    <div class="menu-item">
+                        <h3>Menu Découverte</h3>
+                        <p>Entrée + Plat + Dessert</p>
+                        <ul>
+                            <li>Entrée au choix parmi la carte</li>
+                            <li>Plat au choix parmi la carte</li>
+                            <li>Dessert au choix parmi la carte</li>
+                        </ul>
+                        <div class="menu-price">38€</div>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Menu Dégustation</h3>
+                        <p>Une expérience complète en 5 services</p>
+                        <ul>
+                            <li>Mise en bouche du Chef</li>
+                            <li>Entrée signature</li>
+                            <li>Poisson selon arrivage</li>
+                            <li>Viande de nos régions</li>
+                            <li>Dessert au choix</li>
+                        </ul>
+                        <div class="menu-price">58€</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section galerie -->
+    <section id="galerie" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Galerie</h2>
+                <p>Découvrez nos créations culinaires en images</p>
+            </div>
+            <div class="gallery-container">
+                <!-- Les images seront chargées dynamiquement -->
+                <div class="gallery-item">
+                    <img src="img/placeholder-dish-1.jpg" alt="Plat signature du Chef">
+                    <div class="gallery-overlay">
+                        <h3>Plat signature du Chef</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/placeholder-dish-2.jpg" alt="Dessert aux fruits rouges">
+                    <div class="gallery-overlay">
+                        <h3>Dessert aux fruits rouges</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/placeholder-dish-3.jpg" alt="Entrée de saison">
+                    <div class="gallery-overlay">
+                        <h3>Entrée de saison</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/placeholder-dish-4.jpg" alt="Poisson du lac">
+                    <div class="gallery-overlay">
+                        <h3>Poisson du lac</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <a href="#reservation" class="btn-primary">Réserver une table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section réservation -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Réservation</h2>
+                <p>Réservez votre table en quelques clics</p>
+            </div>
+            <div class="reservation-container">
+                <form id="reservation-form" class="reservation-form">
+                    <div class="form-group">
+                        <label for="couverts">Nombre de couverts</label>
+                        <select id="couverts" name="couverts" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="1">1 personne</option>
+                            <option value="2">2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5 personnes</option>
+                            <option value="6">6 personnes</option>
+                            <option value="7">7 personnes</option>
+                            <option value="8">8 personnes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heure">Heure</label>
+                        <select id="heure" name="heure" required>
+                            <option value="">Sélectionnez</option>
+                            <!-- Les horaires seront chargés dynamiquement -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Allergies ou intolérances</label>
+                        <textarea id="allergies" name="allergies" placeholder="Veuillez nous indiquer vos allergies ou intolérances alimentaires"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Réserver</button>
+                    </div>
+                    <div id="reservation-message" class="reservation-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p>Nous sommes à votre disposition pour toute information</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Adresse</h3>
+                        <p>15 Avenue des Alpes<br>73000 Chambéry</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Téléphone</h3>
+                        <p>+33 4 79 XX XX XX</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>contact@lequaiantique.fr</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horaires</h3>
+                        <p>Mardi - Dimanche<br>12h00 - 14h00 | 19h00 - 21h00</p>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <!-- Intégration de Google Maps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44702.95762976259!2d5.8855556!3d45.5649407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba85708695f9b%3A0xd5c21b7839e32e13!2s73000%20Chamb%C3%A9ry!5e0!3m2!1sfr!2sfr!4v1646330853382!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="connexion-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-target="login-form">Connexion</button>
+                <button class="modal-tab" data-target="register-form">Inscription</button>
+            </div>
+            <div id="login-form" class="modal-form active">
+                <h3>Connexion</h3>
+                <form id="form-login">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mot de passe</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Se connecter</button>
+                    </div>
+                </form>
+            </div>
+            <div id="register-form" class="modal-form">
+                <h3>Inscription</h3>
+                <form id="form-register">
+                    <div class="form-group">
+                        <label for="register-firstname">Prénom</label>
+                        <input type="text" id="register-firstname" name="firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-lastname">Nom</label>
+                        <input type="text" id="register-lastname" name="lastname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Mot de passe</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-couverts">Nombre de couverts par défaut</label>
+                        <select id="register-couverts" name="default_couverts">
+                            <option value="1">1 personne</option>
+                            <option value="2" selected>2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5 personnes</option>
+                            <option value="6">6 personnes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-allergies">Allergies ou intolérances</label>
+                        <textarea id="register-allergies" name="allergies" placeholder="Veuillez nous indiquer vos allergies ou intolérances alimentaires"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Le Quai Antique</h2>
+                    <p>Restaurant gastronomique à Chambéry</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#menu">Notre Carte</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#reservation">Réservation</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 15 Avenue des Alpes, 73000 Chambéry</p>
+                    <p><i class="fas fa-phone"></i> +33 4 79 XX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> contact@lequaiantique.fr</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Le Quai Antique. Tous droits réservés.</p>
+            </div>
+            <p><a href="/" style="display: block; text-align: center; margin-top: 20px; color: #4CAF50; text-decoration: none;">Retour à la page principale</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
